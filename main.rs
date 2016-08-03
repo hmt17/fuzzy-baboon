@@ -130,10 +130,10 @@ fn main() {
 	let c1: Choices = Choices::Rock;
 	let c2: Choices = Choices::Paper;
 	let c3: Choices = Choices::Scissor;
-	let 	
-	while true {
-		//reads in input
-		let mut good = 0;
+	
+	//reads in input
+	let mut good = 0; 	
+	while good!=4 {
 		while good == 0
 		{
 			println!("Enter choice");
@@ -141,7 +141,6 @@ fn main() {
 			io::stdin()
 				.read_line(&mut to_return)
 				.expect("FAIL");
-			
 			//checks if good	
 			good = good_input(to_return);
 			update_results(good, &mut results);
@@ -155,13 +154,13 @@ fn main() {
 		
 		//compare random with enum 
 		if good == 1 {
-			compare_choices(c1, randNum, &mut results);
+			compare_choices(c1, rand_num, &mut results);
 		}
 		else if good == 2 {
-			compare_choices(c2, randNum, &mut results);
+			compare_choices(c2, rand_num, &mut results);
 		}
 		else if good == 3 {
-			compare_choices(c3, randNum, &mut results);
+			compare_choices(c3, rand_num, &mut results);
 		}
 	}
 }
